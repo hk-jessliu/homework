@@ -6,7 +6,7 @@ do
 date1=$(date +"%Y%m%d")
 echo "$date1"
 sudo mkdir -p /tmp/$date1
-sleep 15
+sleep 3600
 
 
 done
