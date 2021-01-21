@@ -1,20 +1,21 @@
 #!/bin/bash
 
+cd /tmp
+sudo mkdir 202101200101
+
 while (true)
 do
 	
-cd /tmp
 for filename  in 2021*
 do
-
         nowtime=$(date +%Y%m%d%H%M)
 
-if [  "${filename%.*}" -le "${nowtime}"    ];then
+if [  "${nowtime}" -gt "${filename%.*}"    ];then
+     if [ ! -d  /tmp/"${nowtime}"   ];then
 
-	date1=$(date +"%Y%m%d%H%M")
-	sudo mkdir -p /tmp/$date1
-	echo "${date1} create file"
-
+	sudo mkdir -p /tmp/${nowtime}
+	echo "${nowtime} create file"
+	fi
 fi
 
 done
